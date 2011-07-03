@@ -6,6 +6,15 @@ var app = module.exports = express.createServer();
 var config = require('./config/config');
 config.configure(app, express);
 
+// Models
+var mongoose = require('mongoose');
+var models = require('./app/models');
+var db, Product;
+models.defineModels(mongoose, function() {
+	app.Product = Product = mongoose.model('Product');
+	db = mongoose.connect(app.set('db-uri'));
+});
+
 // Routes
 var router = require('./router');
 router.route(app);

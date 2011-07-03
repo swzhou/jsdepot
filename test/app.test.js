@@ -12,6 +12,8 @@ module.exports = {
 		});
 	},
 	"test configuration": function() {
-		assert.equal(app.settings['hello'], 'from development');
+		assert.equal(app.set('hello'), 'from development');
+		assert.equal(app.set('db-uri'), 'mongodb://localhost/jsdepot-development');
+		
 	}
 }

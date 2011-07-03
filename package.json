@@ -6,5 +6,8 @@
       "express": "2.3.12"
     , "sass": ">= 0.0.1"
     , "jade": ">= 0.0.1"
+    , "connect-mongodb": ">= 0.0.1"
+	, "mongoose": ">= 0.0.1"
+	, "expresso": ">= 0.0.1"
   }
 }
