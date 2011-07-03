@@ -3,7 +3,7 @@ var production = require('./production.config').config;
 
 var configure = function(app, express) {
 	app.configure(function(){
-		  app.set('views', __dirname + '/../views');
+		  app.set('views', __dirname + '/../app/views');
 		  app.set('view engine', 'jade');
 		  app.use(express.bodyParser());
 		  app.use(express.methodOverride());
@@ -23,8 +23,8 @@ var configure = function(app, express) {
 
 	app.configure('production', function(){
 	  app.use(express.errorHandler());
-	  for (var key in production.sets) {
-	  	app.set(key, production.sets[key]);
+	  for (var key in production) {
+	  	app.set(key, production[key]);
 	  }
 	});
 };
